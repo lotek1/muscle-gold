@@ -11,16 +11,18 @@
 
 ### start backend:
 
+- cd backend
 - npm i
 - npm run dev
 
 ## Frontend
 
 - React
-- Vite
 - React-router-dom
+- Context
 
 ### start frontend:
 
+- cd frontend
 - npm i
-- npm run dev
+- npm start
