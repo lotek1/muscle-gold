@@ -1,6 +1,7 @@
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 
 import { formatDistance } from "date-fns";
+import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
 
 const WorkoutDetails = ({ workout }) => {
   const time = formatDistance(new Date(), new Date(workout.createdAt));
@@ -27,11 +28,13 @@ const WorkoutDetails = ({ workout }) => {
         {workout.load}
       </p>
       <p>
-        <strong>Number of reps: </strong>
+        <strong>Number of reps or minutes: </strong>
         {workout.reps}
       </p>
       <p>{time} ago</p>
-      <span onClick={handleClick}>delete</span>
+      <span onClick={handleClick}>
+        <DeleteForeverOutlinedIcon fontSize="medium" aria-label="Delete" />
+      </span>
     </div>
   );
 };
