@@ -19,10 +19,13 @@ const WorkoutDetails = ({ workout }) => {
       dispatch({ type: "DELETE_WORKOUT", payload: json });
     }
   };
-
+  console.log("workout", workout);
   return (
     <div className="workout-details">
       <h4>{workout.title}</h4>
+      <div className="workout-info" textarea>
+        {workout.info}
+      </div>
       <p>
         <strong>Load (kg): </strong>
         {workout.load}

@@ -19,7 +19,7 @@ function App() {
       </BrowserRouter>
       <footer>
         <p>
-          Muscle Gold {new Date().getFullYear()} {"\u00b0"}and All That Jazz
+          Muscle Gold {new Date().getFullYear()} {"\u00b0"}and All That Sweat
         </p>
       </footer>
     </div>

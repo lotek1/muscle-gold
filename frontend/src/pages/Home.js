@@ -20,7 +20,7 @@ const Home = () => {
 
     fetchWorkouts();
   }, [dispatch]);
-
+  console.log("workouts", workouts);
   return (
     <div className="home">
       <div className="workouts">

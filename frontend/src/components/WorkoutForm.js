@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
+import { Editor } from "@tinymce/tinymce-react";
 
 const WorkoutForm = () => {
   const { dispatch } = useWorkoutsContext();
 
   const [title, setTitle] = useState("");
+  const [info, setInfo] = useState("");
   const [load, setLoad] = useState("");
   const [reps, setReps] = useState("");
   const [error, setError] = useState(null);
@@ -13,7 +15,7 @@ const WorkoutForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const workout = { title, load, reps };
+    const workout = { title, info, load, reps };
 
     const response = await fetch("/api/workouts", {
       method: "POST",
@@ -32,6 +34,7 @@ const WorkoutForm = () => {
       setEmptyFields([]);
       setError(null);
       setTitle("");
+      setInfo("");
       setLoad("");
       setReps("");
       dispatch({ type: "CREATE_WORKOUT", payload: json });
@@ -48,6 +51,14 @@ const WorkoutForm = () => {
         onChange={(e) => setTitle(e.target.value)}
         value={title}
         className={emptyFields.includes("title") ? "error" : ""}
+      />
+      <label>More Info:</label>
+      <textarea
+        style={{ height: "100px", width: "100%" }}
+        type="text"
+        onChange={(e) => setInfo(e.target.value)}
+        value={info}
+        className={emptyFields.includes("info") ? "error" : ""}
       />
 
       <label>Load (in kg):</label>

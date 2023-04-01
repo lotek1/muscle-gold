@@ -46,6 +46,14 @@ header a {
   position: relative;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
 }
+
+.workout-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 .workout-details h4 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
@@ -86,7 +94,7 @@ form button {
   border: 0;
   color: #fff;
   padding: 10px;
-  font-family: "Poppins";
+  font-family: "Barlow";
   border-radius: 4px;
   cursor: pointer;
 }

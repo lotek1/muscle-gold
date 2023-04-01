@@ -7,14 +7,14 @@ const Navbar = () => {
         <Link to="/">
           <h1>Muscle Gold</h1>
         </Link>
-        {/*<div className="pages">
+        <div className="pages">
           <Link to="/adding-new">
             <span>Add New</span>
           </Link>
           <Link to="/">
             <span>List Workouts</span>
           </Link>
-  </div>*/}
+        </div>
       </div>
     </header>
   );
