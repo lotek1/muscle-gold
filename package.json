@@ -1,5 +1,7 @@
 {
-  "dependencies": {
-    "@tinymce/tinymce-react": "^4.3.0"
+  "scripts": {
+    "backend": "npm start --prefix backend",
+    "frontend": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   }
 }

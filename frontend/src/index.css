@@ -40,9 +40,8 @@ header img {
 
 /* homepage */
 .home {
-  display: grid;
-  grid-template-columns: 4fr;
-  gap: 100px;
+  display: block;
+  max-width: 500px;
 }
 .workout-details {
   background: #fff;
