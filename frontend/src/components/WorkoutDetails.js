@@ -23,9 +23,7 @@ const WorkoutDetails = ({ workout }) => {
   return (
     <div className="workout-details">
       <h4>{workout.title}</h4>
-      <div className="workout-info" textarea>
-        {workout.info}
-      </div>
+      <div className="workout-info">{workout.info}</div>
       <p>
         <strong>Load (kg): </strong>
         {workout.load}

@@ -51,7 +51,7 @@ const WorkoutForm = () => {
         value={title}
         className={emptyFields.includes("title") ? "error" : ""}
       />
-      <label>More Info:</label>
+      <label>Add More Info:</label>
       <textarea
         type="text"
         onChange={(e) => setInfo(e.target.value)}
