@@ -5,14 +5,14 @@ const Navbar = () => {
     <header>
       <div className="container">
         <Link to="/">
-          <h1>Muscle Gold</h1>
+          <img src="mg-logo.png" alt="logo" />
         </Link>
         <div className="pages">
           <Link to="/adding-new">
-            <span>Add New</span>
+            <button>Add New</button>
           </Link>
           <Link to="/">
-            <span>List Workouts</span>
+            <button>List Workouts</button>
           </Link>
         </div>
       </div>

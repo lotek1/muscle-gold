@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
-import { Editor } from "@tinymce/tinymce-react";
 
 const WorkoutForm = () => {
   const { dispatch } = useWorkoutsContext();
@@ -54,14 +53,13 @@ const WorkoutForm = () => {
       />
       <label>More Info:</label>
       <textarea
-        style={{ height: "100px", width: "100%" }}
         type="text"
         onChange={(e) => setInfo(e.target.value)}
         value={info}
         className={emptyFields.includes("info") ? "error" : ""}
       />
 
-      <label>Load (in kg):</label>
+      <label>Load added:</label>
       <input
         type="number"
         onChange={(e) => setLoad(e.target.value)}
@@ -69,7 +67,7 @@ const WorkoutForm = () => {
         className={emptyFields.includes("load") ? "error" : ""}
       />
 
-      <label>Number of Reps:</label>
+      <label>Number of Reps or total time:</label>
       <input
         type="number"
         onChange={(e) => setReps(e.target.value)}

@@ -19,7 +19,7 @@ const WorkoutDetails = ({ workout }) => {
       dispatch({ type: "DELETE_WORKOUT", payload: json });
     }
   };
-  console.log("workout", workout);
+
   return (
     <div className="workout-details">
       <h4>{workout.title}</h4>
