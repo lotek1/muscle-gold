@@ -1,18 +1,24 @@
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 
-import { formatDistance } from "date-fns";
+// date fns
+import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
 
 const WorkoutDetails = ({ workout }) => {
-  const time = formatDistance(new Date(), new Date(workout.createdAt));
-
   const { dispatch } = useWorkoutsContext();
+  const { user } = useAuthContext();
 
   const handleClick = async () => {
+    if (!user) {
+      return;
+    }
     const response = await fetch(`/api/workouts/${workout._id}`, {
       method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${user.token}`,
+      },
     });
-
     const json = await response.json();
 
     if (response.ok) {
@@ -32,7 +38,10 @@ const WorkoutDetails = ({ workout }) => {
         <strong>Number of reps or minutes: </strong>
         {workout.reps}
       </p>
-      <p>{time} ago</p>
+      <p>
+        {workout.createdAt}
+        {/* {formatDistanceToNow(new Date(workout.createdAt), { addSuffix: true })} */}
+      </p>
       <span onClick={handleClick}>
         <DeleteForeverOutlinedIcon fontSize="medium" aria-label="Delete" />
       </span>
