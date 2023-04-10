@@ -39,8 +39,7 @@ const WorkoutDetails = ({ workout }) => {
         {workout.reps}
       </p>
       <p>
-        {workout.createdAt}
-        {/* {formatDistanceToNow(new Date(workout.createdAt), { addSuffix: true })} */}
+        {formatDistanceToNow(new Date(workout.createdAt), { addSuffix: true })}
       </p>
       <span onClick={handleClick}>
         <DeleteForeverOutlinedIcon fontSize="medium" aria-label="Delete" />
